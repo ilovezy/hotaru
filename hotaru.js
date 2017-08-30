@@ -286,7 +286,7 @@ function isValidPhone(phone) {
 }
 
 // 名字替换为中间带 * 的样子
-formatName = function(str) {
+function formatName(str) {
   var tempStr = ''
   if (!str.length){
     tempStr = ''
