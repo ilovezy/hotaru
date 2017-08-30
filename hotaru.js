@@ -284,3 +284,28 @@ function isValidPhone(phone) {
   var tempPhone = Number(phone)
   return /^1(3|4|5|7|8)\d{9}$/.test(tempPhone)
 }
+
+// 名字替换为中间带 * 的样子
+formatName = function(str) {
+  var tempStr = ''
+  if (!str.length){
+    tempStr = ''
+  }
+  if(str.length == 1){
+    tempStr = str
+  }
+  if (str.length == 2){
+    tempStr = str.replace(/^(.).*(.)$/,"$1*")
+  }
+  if (str.length > 2){
+    var num = str.length - 2;
+    var temp = '';
+    for (var i = 0; i < num; i ++){
+      temp += '*'
+    }
+    var reg = "$1" + temp + "$2"
+    tempStr = str.replace(/^(.).*(.)$/, reg)
+  }
+  return tempStr
+}
+
